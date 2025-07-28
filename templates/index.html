@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Electricity Usage Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+     <script src="static/script.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Village Electricity Usage Prediction</h1>
+        <form id="predictionForm">
+            <label for="day">Day of the Week:</label>
+            <select id="day" required>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+
+            <label for="season">Season:</label>
+            <select id="season" required>
+                <option value="Summer">Summer</option>
+                <option value="Winter">Winter</option>
+                <option value="Monsoon">Monsoon</option>
+            </select>
+
+            <label for="temperature">Average Temperature (°C):</label>
+            <input type="number" step="0.1" id="temperature" placeholder="e.g., 30" required>
+
+            <label for="households">Number of Households:</label>
+            <input type="number" id="households" placeholder="e.g., 100" required>
+
+            <button type="submit">Predict Electricity Usage</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
